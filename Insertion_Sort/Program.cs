@@ -1,42 +1,34 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿static void InsertionSort(List<int> arr){
+    int key = 0;
+    int size = arr.Count();
+    int j = 0;
 
-using System;
-using System.Collections.Generic;
-
-static int InsertionSort(List<int> arr){
-
-    bool isUnsorted = false;
-    int index = 0;
-    for(int i = 0; i < arr.Count - 1; i++){
-
-        if(arr[i] > arr[i + 1]){
-            isUnsorted = true;
-            index = i;
-            return index;
+    for(int i = 1; i < size ; i++){ 
+        key = arr[i]; 
+        for(j = i; j > 0 && key < arr[j - 1]; j--){ 
+            arr[j] = arr[j - 1]; 
         }
+        arr[j] = key; 
     }
-
-    return 1;
 }
 
 var arr = new List<int>(5);
 
-arr.Add(7);
-arr.Add(8);
+arr.Add(9);
 arr.Add(5);
-arr.Add(2);
+arr.Add(1);
 arr.Add(4);
+arr.Add(3);
 
 foreach(var i in arr){
-    Console.Write($"{i} ");
+    Console.Write($" {i} |");
 
 }
 
-Console.WriteLine($"\n\nThe array is unsorted in the {InsertionSort(arr)}th position");
+Console.WriteLine("\nSorting...");
+InsertionSort(arr);
 
-// static void InsertionSort(int[] arr){
+foreach(var i in arr){
+    Console.Write($" {i} |");
 
-
-
-    
-// }
+}
