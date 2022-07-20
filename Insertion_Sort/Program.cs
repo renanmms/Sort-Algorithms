@@ -1,4 +1,4 @@
-﻿static void InsertionSort(List<int> arr){
+﻿static void InsertionSort(int[] arr){
     int key = 0;
     int size = arr.Count();
     int j = 0;
@@ -12,13 +12,7 @@
     }
 }
 
-var arr = new List<int>(5);
-
-arr.Add(9);
-arr.Add(5);
-arr.Add(1);
-arr.Add(4);
-arr.Add(3);
+var arr = new int[]{9, 8, 1, 5, 6};
 
 foreach(var i in arr){
     Console.Write($" {i} |");
